@@ -1,3 +1,4 @@
+load(":cc_toolchain_forwarder.bzl", "cc_toolchain_forwarder")
 load("@bazel_skylib//:bzl_library.bzl", "bzl_library")
 
 package(default_visibility = ["//visibility:public"])
@@ -60,6 +61,7 @@ bzl_library(
         "//apple/internal:rule_factory",
         "//apple/internal:transition_support",
         "@bazel_skylib//lib:dicts",
+        "@bazel_tools//tools/cpp:toolchain_utils",
     ],
 )
 
@@ -68,6 +70,15 @@ bzl_library(
     srcs = ["aspects.bzl"],
     deps = [
         "//apple/internal/aspects:framework_provider_aspect",
+    ],
+)
+
+bzl_library(
+    name = "cc_toolchain_forwarder",
+    srcs = ["cc_toolchain_forwarder.bzl"],
+    deps = [
+        ":providers",
+        "@bazel_tools//tools/cpp:toolchain_utils",
     ],
 )
 
@@ -192,6 +203,10 @@ bzl_library(
     name = "watchos.doc",
     srcs = ["watchos.doc.bzl"],
     deps = ["watchos"],
+)
+
+cc_toolchain_forwarder(
+    name = "default_cc_toolchain_forwarder",
 )
 
 # Consumed by bazel tests.

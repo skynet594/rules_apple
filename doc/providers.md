@@ -168,6 +168,26 @@ Provider that propagates information about framework import targets.
 | <a id="AppleFrameworkImportInfo-debug_info_binaries"></a>debug_info_binaries |  Depset of Files that represent framework binaries and dSYM binaries that provide debug info.    |
 
 
+<a id="ApplePlatformInfo"></a>
+
+## ApplePlatformInfo
+
+<pre>
+ApplePlatformInfo(<a href="#ApplePlatformInfo-target_os">target_os</a>, <a href="#ApplePlatformInfo-target_arch">target_arch</a>, <a href="#ApplePlatformInfo-target_environment">target_environment</a>)
+</pre>
+
+Provides information for the currently selected Apple platforms.
+
+**FIELDS**
+
+
+| Name  | Description |
+| :------------- | :------------- |
+| <a id="ApplePlatformInfo-target_os"></a>target_os |  <code>String</code> representing the selected Apple OS.    |
+| <a id="ApplePlatformInfo-target_arch"></a>target_arch |  <code>String</code> representing the selected target architecture or cpu type.    |
+| <a id="ApplePlatformInfo-target_environment"></a>target_environment |  <code>String</code> representing the selected target environment (e.g. "device", "simulator").    |
+
+
 <a id="AppleProvisioningProfileInfo"></a>
 
 ## AppleProvisioningProfileInfo
