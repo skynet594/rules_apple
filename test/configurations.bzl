@@ -21,10 +21,9 @@ COMPILATION_MODE_OPTIONS = ["--compilation_mode opt"]
 # Configuration options used with `apple_shell_test` to run tests for
 # iOS simulator and device builds.
 #
-# TODO(b/35091927): Here and below, switch to Bitcode mode "embedded".
-IOS_DEVICE_OPTIONS = COMPILATION_MODE_OPTIONS + ["--ios_multi_cpus=arm64,armv7"]
+IOS_DEVICE_OPTIONS = COMPILATION_MODE_OPTIONS + ["--ios_multi_cpus=arm64,arm64e"]
 IOS_SIMULATOR_OPTIONS = COMPILATION_MODE_OPTIONS + [
-    "--ios_multi_cpus=i386,x86_64",
+    "--ios_multi_cpus=sim_arm64,x86_64",
 ]
 
 IOS_CONFIGURATIONS = {
@@ -83,11 +82,11 @@ TVOS_TEST_CONFIGURATIONS = {
 # with an iOS host app, we include that platform's configuration options as
 # well.
 WATCHOS_DEVICE_OPTIONS = COMPILATION_MODE_OPTIONS + [
-    "--ios_multi_cpus=arm64,armv7",
+    "--ios_multi_cpus=arm64,arm64e",
     "--watchos_cpus=armv7k",
 ]
 WATCHOS_SIMULATOR_OPTIONS = COMPILATION_MODE_OPTIONS + [
-    "--ios_multi_cpus=i386,x86_64",
+    "--ios_multi_cpus=sim_arm64,x86_64",
     "--watchos_cpus=i386",
 ]
 
