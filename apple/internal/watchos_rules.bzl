@@ -960,4 +960,5 @@ watchos_static_framework = rule_factory.create_apple_bundling_rule(
     platform_type = "watchos",
     product_type = apple_product_type.static_framework,
     doc = "Builds and bundles a watchOS Static Framework.",
+    
 )
